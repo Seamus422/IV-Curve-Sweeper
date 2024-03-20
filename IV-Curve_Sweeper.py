@@ -88,6 +88,8 @@ def sweep(compliance, start_voltage, stop_voltage, step_size, ax, canvas, border
     global Current617
     global Current617A
     rm = pyvisa.ResourceManager()
+   
+    # Be sure to change GPIB0 Address to match your specific instrument
     keithley_2410 = rm.open_resource('GPIB0::24::INSTR', timeout=10000)
     keithley_617A = rm.open_resource('GPIB0::8::INSTR')
     keithley_617 = rm.open_resource('GPIB0::10::INSTR')
